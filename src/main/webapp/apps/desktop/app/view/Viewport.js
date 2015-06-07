@@ -1,6 +1,10 @@
 Ext.define('Builder.view.Viewport', {
 	extend: 'Ext.container.Viewport',
 	
+	requires: [
+		'Ext.tab.Panel'
+	],
+
 	xtype: 'builder_vieport',
 	
 	layout: 'border',
