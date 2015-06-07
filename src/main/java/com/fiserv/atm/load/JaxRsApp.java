@@ -1,8 +1,6 @@
 package com.fiserv.atm.load;
 
-import com.fiserv.atm.load.resource.EntryResource;
-import com.fiserv.atm.load.resource.FeatureResource;
-import com.fiserv.atm.load.resource.LoadResource;
+import com.fiserv.atm.load.resource.*;
 import com.nhl.link.rest.runtime.LinkRestBuilder;
 import com.nhl.link.rest.runtime.adapter.sencha.SenchaAdapter;
 import org.apache.cayenne.configuration.server.ServerRuntime;
@@ -14,10 +12,6 @@ import org.slf4j.LoggerFactory;
 import javax.annotation.PreDestroy;
 import javax.ws.rs.ApplicationPath;
 
-/**
- * A Jersey framework-specific JAX-RS Application class that allows us to
- * bootstrap Cayenne and LinkRest.
- */
 @ApplicationPath("/rest")
 public class JaxRsApp extends ResourceConfig {
 
@@ -38,9 +32,18 @@ public class JaxRsApp extends ResourceConfig {
 		);
 		
 		// expose application REST endpoints
-		packages(LoadResource.class.getPackage().getName());
-		packages(FeatureResource.class.getPackage().getName());
 		packages(EntryResource.class.getPackage().getName());
+		packages(EntryTypeResource.class.getPackage().getName());
+		packages(FeatureResource.class.getPackage().getName());
+		packages(FlavorResource.class.getPackage().getName());
+		packages(PartResource.class.getPackage().getName());
+		packages(StreamResource.class.getPackage().getName());
+
+		packages(LoadResource.class.getPackage().getName());
+		packages(EntryMenuResource.class.getPackage().getName());
+		packages(EntryMenuItemResource.class.getPackage().getName());
+		packages(FeatureMenuResource.class.getPackage().getName());
+		packages(FeatureMenuItemResource.class.getPackage().getName());
 	}
 
 	@PreDestroy

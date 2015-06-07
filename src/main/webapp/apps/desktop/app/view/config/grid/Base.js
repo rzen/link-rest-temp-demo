@@ -1,11 +1,11 @@
-Ext.define('Builder.view.BaseGrid', {
+Ext.define('Builder.view.config.grid.Base', {
 	extend: 'Ext.grid.Panel',
 
 	requires: [
 		'Ext.grid.plugin.CellEditing'
 	],
 
-	deferEmptyText: true,
+	deferEmptyText: false,
 
 	forceFit: true,
 	border: true,
@@ -27,11 +27,7 @@ Ext.define('Builder.view.BaseGrid', {
 				var grid = this.up('grid'),
 					vm = grid.ownerCt.getViewModel();
 
-				grid.getStore().add({
-					active: true,
-					load_id: vm.get('loadGrid.selection.id'),
-					feature_id: vm.get('featureGrid.selection.id')
-				});
+				grid.getStore().add({});
 			}
 
 		}, {

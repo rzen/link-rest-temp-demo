@@ -1,19 +1,15 @@
-Ext.define('Builder.view.FeatureGrid', {
-	extend: 'Builder.view.BaseGrid',
+Ext.define('Builder.view.config.grid.Feature', {
+	extend: 'Builder.view.config.grid.Base',
 
-	xtype: 'feature_grid',
-
-	reference: 'featureGrid',
-
-	// tools: [
-	// 	{
-	// 		type: 'plus',
-	// 		handler: 'onFeatureAdd'
-	// 	}
-	// ],
+	xtype: 'config_feature_grid',
 
 	columns: [
 		{
+			width: 40,
+			header: 'Id',
+			dataIndex: 'id',
+			editor: 'numberfield'
+		}, {
 			header: 'Name',
 			dataIndex: 'name',
 			editor: 'textfield'
