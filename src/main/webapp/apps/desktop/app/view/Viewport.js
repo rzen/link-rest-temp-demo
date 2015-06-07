@@ -1,22 +1,28 @@
 Ext.define('Builder.view.Viewport', {
-	extend: 'Ext.tab.Panel',
+	extend: 'Ext.container.Viewport',
 	
 	xtype: 'builder_vieport',
 	
-	// controller: 'builder_main',
-	// viewModel: {
-	// 	type: 'builder_main'
-	// },
-
-	layout: 'border',
-
 	items: [
 		{
-		// 	title: 'Loads',
-		// 	xtype: "loads_tab"
-		// }, '->', {
-			title: 'Config',
-			xtype: "config_tab"
+			xtype: 'chrome_bar',
+			region: 'north'
+		}, {
+			region: 'center',
+			xtype: 'tabpanel',
+			items: [
+				{
+					title: 'Loads',
+					xtype: 'load_tab'
+				}, {
+					tabConfig: {
+						xtype: 'tbfill'
+					}
+				}, {
+					title: 'Config',
+					xtype: 'config_tab'
+				}
+			]
 		}
 	]
 });
