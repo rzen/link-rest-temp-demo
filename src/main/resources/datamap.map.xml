@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data-map xmlns="http://cayenne.apache.org/schema/7/modelMap"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://cayenne.apache.org/schema/7/modelMap http://cayenne.apache.org/schema/7/modelMap.xsd"
+	 project-version="7">
+	<property name="defaultPackage" value="com.fiserv.atm.load.cayenne"/>
+	<property name="defaultCatalog" value="atmloadbuilder"/>
+	<db-entity name="entry" catalog="atmloadbuilder">
+		<db-attribute name="anchor" type="VARCHAR" length="45"/>
+		<db-attribute name="entry_type_id" type="INTEGER" isMandatory="true" length="10"/>
+		<db-attribute name="id" type="INTEGER" isPrimaryKey="true" isGenerated="true" isMandatory="true" length="10"/>
+		<db-attribute name="name" type="VARCHAR" length="45"/>
+		<db-attribute name="part_id" type="INTEGER" isMandatory="true" length="10"/>
+		<db-attribute name="screen_text" type="VARCHAR" length="45"/>
+		<db-attribute name="value" type="VARCHAR" length="45"/>
+	</db-entity>
+	<db-entity name="entry_menu" catalog="atmloadbuilder">
+		<db-attribute name="feature_menu_item_id" type="INTEGER" isMandatory="true" length="10"/>
+		<db-attribute name="id" type="INTEGER" isPrimaryKey="true" isGenerated="true" isMandatory="true" length="10"/>
+		<db-attribute name="screen_number" type="INTEGER" isMandatory="true" length="10"/>
+	</db-entity>
+	<db-entity name="entry_menu_item" catalog="atmloadbuilder">
+		<db-attribute name="entry_id" type="INTEGER" isMandatory="true" length="10"/>
+		<db-attribute name="entry_menu_id" type="INTEGER" isMandatory="true" length="10"/>
+		<db-attribute name="goto_entry_menu_id" type="INTEGER" length="10"/>
+		<db-attribute name="goto_feature_menu_id" type="INTEGER" length="10"/>
+		<db-attribute name="id" type="INTEGER" isPrimaryKey="true" isGenerated="true" isMandatory="true" length="10"/>
+		<db-attribute name="screen_pos" type="INTEGER" isMandatory="true" length="10"/>
+		<db-attribute name="source" type="VARCHAR" length="45"/>
+		<db-attribute name="value" type="VARCHAR" length="45"/>
+	</db-entity>
+	<db-entity name="entry_type" catalog="atmloadbuilder">
+		<db-attribute name="code" type="VARCHAR" length="45"/>
+		<db-attribute name="id" type="INTEGER" isPrimaryKey="true" isGenerated="true" isMandatory="true" length="10"/>
+		<db-attribute name="name" type="VARCHAR" length="45"/>
+	</db-entity>
+	<db-entity name="feature" catalog="atmloadbuilder">
+		<db-attribute name="active" type="BIT" isMandatory="true"/>
+		<db-attribute name="code" type="VARCHAR" isMandatory="true" length="45"/>
+		<db-attribute name="id" type="INTEGER" isPrimaryKey="true" isGenerated="true" isMandatory="true" length="10"/>
+		<db-attribute name="name" type="VARCHAR" isMandatory="true" length="45"/>
+	</db-entity>
+	<db-entity name="feature_menu" catalog="atmloadbuilder">
+		<db-attribute name="id" type="INTEGER" isPrimaryKey="true" isGenerated="true" isMandatory="true" length="10"/>
+		<db-attribute name="load_id" type="INTEGER" isMandatory="true" length="10"/>
+		<db-attribute name="screen_number" type="INTEGER" isMandatory="true" length="10"/>
+		<db-attribute name="stream_id" type="INTEGER" isMandatory="true" length="10"/>
+	</db-entity>
+	<db-entity name="feature_menu_item" catalog="atmloadbuilder">
+		<db-attribute name="active" type="BIT" isMandatory="true"/>
+		<db-attribute name="feature_id" type="INTEGER" isMandatory="true" length="10"/>
+		<db-attribute name="feature_menu_id" type="INTEGER" isMandatory="true" length="10"/>
+		<db-attribute name="flavor_id" type="INTEGER" isMandatory="true" length="10"/>
+		<db-attribute name="id" type="INTEGER" isPrimaryKey="true" isGenerated="true" isMandatory="true" length="10"/>
+		<db-attribute name="screen_pos" type="INTEGER" isMandatory="true" length="10"/>
+	</db-entity>
+	<db-entity name="flavor" catalog="atmloadbuilder">
+		<db-attribute name="feature_id" type="INTEGER" isMandatory="true" length="10"/>
+		<db-attribute name="id" type="INTEGER" isPrimaryKey="true" isGenerated="true" isMandatory="true" length="10"/>
+		<db-attribute name="name" type="VARCHAR" length="45"/>
+	</db-entity>
+	<db-entity name="load" catalog="atmloadbuilder">
+		<db-attribute name="description" type="VARCHAR" length="45"/>
+		<db-attribute name="id" type="INTEGER" isPrimaryKey="true" isGenerated="true" isMandatory="true" length="10"/>
+		<db-attribute name="type" type="VARCHAR" isMandatory="true" length="45"/>
+	</db-entity>
+	<db-entity name="part" catalog="atmloadbuilder">
+		<db-attribute name="id" type="INTEGER" isPrimaryKey="true" isGenerated="true" isMandatory="true" length="10"/>
+		<db-attribute name="name" type="VARCHAR" length="45"/>
+	</db-entity>
+	<db-entity name="stream" catalog="atmloadbuilder">
+		<db-attribute name="code" type="VARCHAR" isMandatory="true" length="45"/>
+		<db-attribute name="id" type="INTEGER" isPrimaryKey="true" isGenerated="true" isMandatory="true" length="10"/>
+		<db-attribute name="name" type="VARCHAR" isMandatory="true" length="45"/>
+	</db-entity>
+	<obj-entity name="Entry" className="com.fiserv.atm.load.cayenne.Entry" dbEntityName="entry">
+		<obj-attribute name="anchor" type="java.lang.String" db-attribute-path="anchor"/>
+		<obj-attribute name="name" type="java.lang.String" db-attribute-path="name"/>
+		<obj-attribute name="screenText" type="java.lang.String" db-attribute-path="screen_text"/>
+		<obj-attribute name="value" type="java.lang.String" db-attribute-path="value"/>
+	</obj-entity>
+	<obj-entity name="EntryMenu" className="com.fiserv.atm.load.cayenne.EntryMenu" dbEntityName="entry_menu">
+		<obj-attribute name="screenNumber" type="java.lang.Integer" db-attribute-path="screen_number"/>
+	</obj-entity>
+	<obj-entity name="EntryMenuItem" className="com.fiserv.atm.load.cayenne.EntryMenuItem" dbEntityName="entry_menu_item">
+		<obj-attribute name="screenPos" type="java.lang.Integer" db-attribute-path="screen_pos"/>
+		<obj-attribute name="source" type="java.lang.String" db-attribute-path="source"/>
+		<obj-attribute name="value" type="java.lang.String" db-attribute-path="value"/>
+	</obj-entity>
+	<obj-entity name="EntryType" className="com.fiserv.atm.load.cayenne.EntryType" dbEntityName="entry_type">
+		<obj-attribute name="code" type="java.lang.String" db-attribute-path="code"/>
+		<obj-attribute name="name" type="java.lang.String" db-attribute-path="name"/>
+	</obj-entity>
+	<obj-entity name="Feature" className="com.fiserv.atm.load.cayenne.Feature" dbEntityName="feature">
+		<obj-attribute name="active" type="boolean" db-attribute-path="active"/>
+		<obj-attribute name="code" type="java.lang.String" db-attribute-path="code"/>
+		<obj-attribute name="name" type="java.lang.String" db-attribute-path="name"/>
+	</obj-entity>
+	<obj-entity name="FeatureMenu" className="com.fiserv.atm.load.cayenne.FeatureMenu" dbEntityName="feature_menu">
+		<obj-attribute name="screenNumber" type="java.lang.Integer" db-attribute-path="screen_number"/>
+	</obj-entity>
+	<obj-entity name="FeatureMenuItem" className="com.fiserv.atm.load.cayenne.FeatureMenuItem" dbEntityName="feature_menu_item">
+		<obj-attribute name="active" type="java.lang.Boolean" db-attribute-path="active"/>
+		<obj-attribute name="screenPos" type="java.lang.Integer" db-attribute-path="screen_pos"/>
+	</obj-entity>
+	<obj-entity name="Flavor" className="com.fiserv.atm.load.cayenne.Flavor" dbEntityName="flavor">
+		<obj-attribute name="name" type="java.lang.String" db-attribute-path="name"/>
+	</obj-entity>
+	<obj-entity name="Load" className="com.fiserv.atm.load.cayenne.Load" dbEntityName="load">
+		<obj-attribute name="description" type="java.lang.String" db-attribute-path="description"/>
+		<obj-attribute name="type" type="java.lang.String" db-attribute-path="type"/>
+	</obj-entity>
+	<obj-entity name="Part" className="com.fiserv.atm.load.cayenne.Part" dbEntityName="part">
+		<obj-attribute name="name" type="java.lang.String" db-attribute-path="name"/>
+	</obj-entity>
+	<obj-entity name="Stream" className="com.fiserv.atm.load.cayenne.Stream" dbEntityName="stream">
+		<obj-attribute name="code" type="java.lang.String" db-attribute-path="code"/>
+		<obj-attribute name="name" type="java.lang.String" db-attribute-path="name"/>
+	</obj-entity>
+	<db-relationship name="entryMenuItems" source="entry" target="entry_menu_item" toMany="true">
+		<db-attribute-pair source="id" target="entry_id"/>
+	</db-relationship>
+	<db-relationship name="entryType" source="entry" target="entry_type" toMany="false">
+		<db-attribute-pair source="entry_type_id" target="id"/>
+	</db-relationship>
+	<db-relationship name="part" source="entry" target="part" toMany="false">
+		<db-attribute-pair source="part_id" target="id"/>
+	</db-relationship>
+	<db-relationship name="entryMenuItems" source="entry_menu" target="entry_menu_item" toMany="true">
+		<db-attribute-pair source="id" target="goto_entry_menu_id"/>
+	</db-relationship>
+	<db-relationship name="entryMenuItems1" source="entry_menu" target="entry_menu_item" toMany="true">
+		<db-attribute-pair source="id" target="entry_menu_id"/>
+	</db-relationship>
+	<db-relationship name="featureMenuItem" source="entry_menu" target="feature_menu_item" toMany="false">
+		<db-attribute-pair source="feature_menu_item_id" target="id"/>
+	</db-relationship>
+	<db-relationship name="entry" source="entry_menu_item" target="entry" toMany="false">
+		<db-attribute-pair source="entry_id" target="id"/>
+	</db-relationship>
+	<db-relationship name="entryMenu" source="entry_menu_item" target="entry_menu" toMany="false">
+		<db-attribute-pair source="entry_menu_id" target="id"/>
+	</db-relationship>
+	<db-relationship name="gotoEntryMenu" source="entry_menu_item" target="entry_menu" toMany="false">
+		<db-attribute-pair source="goto_entry_menu_id" target="id"/>
+	</db-relationship>
+	<db-relationship name="gotoFeatureMenu" source="entry_menu_item" target="feature_menu" toMany="false">
+		<db-attribute-pair source="goto_feature_menu_id" target="id"/>
+	</db-relationship>
+	<db-relationship name="entries" source="entry_type" target="entry" toMany="true">
+		<db-attribute-pair source="id" target="entry_type_id"/>
+	</db-relationship>
+	<db-relationship name="featureMenuItems" source="feature" target="feature_menu_item" toMany="true">
+		<db-attribute-pair source="id" target="feature_id"/>
+	</db-relationship>
+	<db-relationship name="flavors" source="feature" target="flavor" toMany="true">
+		<db-attribute-pair source="id" target="feature_id"/>
+	</db-relationship>
+	<db-relationship name="entryMenuItems" source="feature_menu" target="entry_menu_item" toMany="true">
+		<db-attribute-pair source="id" target="goto_feature_menu_id"/>
+	</db-relationship>
+	<db-relationship name="featureMenuItems" source="feature_menu" target="feature_menu_item" toMany="true">
+		<db-attribute-pair source="id" target="feature_menu_id"/>
+	</db-relationship>
+	<db-relationship name="load" source="feature_menu" target="load" toMany="false">
+		<db-attribute-pair source="load_id" target="id"/>
+	</db-relationship>
+	<db-relationship name="stream" source="feature_menu" target="stream" toMany="false">
+		<db-attribute-pair source="stream_id" target="id"/>
+	</db-relationship>
+	<db-relationship name="entryMenus" source="feature_menu_item" target="entry_menu" toMany="true">
+		<db-attribute-pair source="id" target="feature_menu_item_id"/>
+	</db-relationship>
+	<db-relationship name="feature" source="feature_menu_item" target="feature" toMany="false">
+		<db-attribute-pair source="feature_id" target="id"/>
+	</db-relationship>
+	<db-relationship name="featureMenu" source="feature_menu_item" target="feature_menu" toMany="false">
+		<db-attribute-pair source="feature_menu_id" target="id"/>
+	</db-relationship>
+	<db-relationship name="flavor" source="feature_menu_item" target="flavor" toMany="false">
+		<db-attribute-pair source="flavor_id" target="id"/>
+	</db-relationship>
+	<db-relationship name="feature" source="flavor" target="feature" toMany="false">
+		<db-attribute-pair source="feature_id" target="id"/>
+	</db-relationship>
+	<db-relationship name="featureMenuItems" source="flavor" target="feature_menu_item" toMany="true">
+		<db-attribute-pair source="id" target="flavor_id"/>
+	</db-relationship>
+	<db-relationship name="featureMenus" source="load" target="feature_menu" toMany="true">
+		<db-attribute-pair source="id" target="load_id"/>
+	</db-relationship>
+	<db-relationship name="entries" source="part" target="entry" toMany="true">
+		<db-attribute-pair source="id" target="part_id"/>
+	</db-relationship>
+	<db-relationship name="featureMenus" source="stream" target="feature_menu" toMany="true">
+		<db-attribute-pair source="id" target="stream_id"/>
+	</db-relationship>
+	<obj-relationship name="entryMenuItems" source="Entry" target="EntryMenuItem" deleteRule="Deny" db-relationship-path="entryMenuItems"/>
+	<obj-relationship name="entryType" source="Entry" target="EntryType" deleteRule="Nullify" db-relationship-path="entryType"/>
+	<obj-relationship name="part" source="Entry" target="Part" deleteRule="Nullify" db-relationship-path="part"/>
+	<obj-relationship name="entryMenuItems" source="EntryMenu" target="EntryMenuItem" deleteRule="Deny" db-relationship-path="entryMenuItems"/>
+	<obj-relationship name="entryMenuItems1" source="EntryMenu" target="EntryMenuItem" deleteRule="Deny" db-relationship-path="entryMenuItems1"/>
+	<obj-relationship name="featureMenuItem" source="EntryMenu" target="FeatureMenuItem" deleteRule="Nullify" db-relationship-path="featureMenuItem"/>
+	<obj-relationship name="entry" source="EntryMenuItem" target="Entry" deleteRule="Nullify" db-relationship-path="entry"/>
+	<obj-relationship name="entryMenu" source="EntryMenuItem" target="EntryMenu" deleteRule="Nullify" db-relationship-path="entryMenu"/>
+	<obj-relationship name="gotoEntryMenu" source="EntryMenuItem" target="EntryMenu" deleteRule="Nullify" db-relationship-path="gotoEntryMenu"/>
+	<obj-relationship name="gotoFeatureMenu" source="EntryMenuItem" target="FeatureMenu" deleteRule="Nullify" db-relationship-path="gotoFeatureMenu"/>
+	<obj-relationship name="entries" source="EntryType" target="Entry" deleteRule="Deny" db-relationship-path="entries"/>
+	<obj-relationship name="featureMenuItems" source="Feature" target="FeatureMenuItem" deleteRule="Deny" db-relationship-path="featureMenuItems"/>
+	<obj-relationship name="flavors" source="Feature" target="Flavor" deleteRule="Deny" db-relationship-path="flavors"/>
+	<obj-relationship name="entryMenuItems" source="FeatureMenu" target="EntryMenuItem" deleteRule="Deny" db-relationship-path="entryMenuItems"/>
+	<obj-relationship name="featureMenuItems" source="FeatureMenu" target="FeatureMenuItem" deleteRule="Deny" db-relationship-path="featureMenuItems"/>
+	<obj-relationship name="load" source="FeatureMenu" target="Load" deleteRule="Nullify" db-relationship-path="load"/>
+	<obj-relationship name="stream" source="FeatureMenu" target="Stream" deleteRule="Nullify" db-relationship-path="stream"/>
+	<obj-relationship name="entryMenus" source="FeatureMenuItem" target="EntryMenu" deleteRule="Deny" db-relationship-path="entryMenus"/>
+	<obj-relationship name="feature" source="FeatureMenuItem" target="Feature" deleteRule="Nullify" db-relationship-path="feature"/>
+	<obj-relationship name="featureMenu" source="FeatureMenuItem" target="FeatureMenu" deleteRule="Nullify" db-relationship-path="featureMenu"/>
+	<obj-relationship name="flavor" source="FeatureMenuItem" target="Flavor" deleteRule="Nullify" db-relationship-path="flavor"/>
+	<obj-relationship name="feature" source="Flavor" target="Feature" deleteRule="Nullify" db-relationship-path="feature"/>
+	<obj-relationship name="featureMenuItems" source="Flavor" target="FeatureMenuItem" deleteRule="Deny" db-relationship-path="featureMenuItems"/>
+	<obj-relationship name="featureMenus" source="Load" target="FeatureMenu" deleteRule="Deny" db-relationship-path="featureMenus"/>
+	<obj-relationship name="entries" source="Part" target="Entry" deleteRule="Deny" db-relationship-path="entries"/>
+	<obj-relationship name="featureMenus" source="Stream" target="FeatureMenu" deleteRule="Deny" db-relationship-path="featureMenus"/>
+</data-map>
