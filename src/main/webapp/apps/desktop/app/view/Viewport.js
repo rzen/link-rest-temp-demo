@@ -3,6 +3,8 @@ Ext.define('Builder.view.Viewport', {
 	
 	xtype: 'builder_vieport',
 	
+	layout: 'border',
+
 	items: [
 		{
 			xtype: 'chrome_bar',

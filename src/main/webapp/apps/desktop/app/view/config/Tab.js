@@ -21,7 +21,6 @@ Ext.define('Builder.view.config.Tab', {
 			align: 'stretch'
 		},
 		defaults: {
-			layout: 'fit',
 			padding: 5,
 			flex: 3
 		}
