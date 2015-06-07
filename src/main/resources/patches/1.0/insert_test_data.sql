@@ -1,9 +1,6 @@
-
-INSERT INTO `atmloadbuilder`.`load` (`id`, `description`) VALUES ('1', 'BofA in Newark, DE');
-
-
-INSERT INTO `atmloadbuilder`.`feature` (`active`, `load_id`, `name`, `feature`, `stream`) VALUES ('1', '1', 'Balance Inquiry', 'BI', 'Foreign');
-INSERT INTO `atmloadbuilder`.`feature` (`active`, `load_id`, `name`, `feature`, `stream`) VALUES ('1', '1', 'Fast Cash', 'FC', 'Foreign');
-INSERT INTO `atmloadbuilder`.`feature` (`active`, `load_id`, `name`, `feature`, `stream`) VALUES ('1', '1', 'Transfer', 'TR', 'Foreign');
-INSERT INTO `atmloadbuilder`.`feature` (`active`, `load_id`, `name`, `feature`, `stream`) VALUES ('1', '1', 'Mixed Deposit', 'MD', 'FIT1');
-INSERT INTO `atmloadbuilder`.`feature` (`active`, `load_id`, `name`, `feature`, `stream`) VALUES ('1', '1', 'Night Deposit', 'ND', 'FIT1');
+INSERT INTO `entry` VALUES (1,1,1,NULL,NULL,'Checking','1'),(2,2,1,NULL,NULL,'Savings','2'),(3,2,1,NULL,NULL,'Credit Line','3'),(4,2,1,NULL,NULL,'Credit Card','4'),(5,2,1,NULL,NULL,'Next Menu','10'),(6,2,1,NULL,NULL,'Installment Loan','12'),(7,8,2,NULL,NULL,NULL,'20'),(8,8,2,NULL,NULL,NULL,'40'),(9,8,2,NULL,NULL,NULL,'60');
+INSERT INTO `entry_type` VALUES (1,NULL,'Menus'),(2,NULL,'AccountMenus'),(3,NULL,'Boolean'),(4,NULL,'Text'),(5,NULL,'JSEntry'),(6,NULL,'NextAccountMenus'),(7,NULL,'PrevAccountMenus'),(8,NULL,'AmountMenus'),(9,NULL,'Hidden'),(10,NULL,'Number'),(11,NULL,'Hidden_true_false'),(12,NULL,'Boolean_none_auto_ask');
+INSERT INTO `feature` VALUES (1,'PFI',1,'Prompt For Inquiry'),(2,'BI',1,'Balance Inquiry'),(3,'WD',1,'Withdrawal'),(4,'FC',1,'Fast Cash'),(5,'TR',1,'Transfer'),(6,'EP',1,'Electronic Payment'),(7,'ST',1,'Stamps'),(8,'SP',1,'Statement Print'),(9,'CD',1,'Commercial Deposit'),(10,'ED',1,'Envelope Deposit'),(11,'OR',1,'Optional Receipt'),(12,'TC',1,'Transaction Chaining'),(13,'T1D',1,'Track 1 data'),(14,'RCBP',1,'Return Card Before PIN'),(15,'RCBC',1,'Return Card Before Cash'),(16,'CBFC',1,'Card Based Fast Cash'),(17,'EUC',1,'EJ Upload Customization'),(18,'VG',1,'Voice Guidance'),(19,'CB',1,'Cardless Balancing'),(20,'BIM',1,'Balance Inquiry Method'),(21,'EVP',1,'Payment Enclosed'),(22,'PC',1,'Change PIN'),(23,'MCD',1,'Multi-Check Deposit'),(24,'ENHD',1,'Enhanced Deposit'),(25,'BNKN',1,'Bank Name'),(26,'MMDP',1,'Mixed Media Deposit');
+INSERT INTO `flavor` VALUES (1,'EPOC Hard-Coded',4),(2,'CM2/RAS Hard-Coded',4),(3,'CM2/RAS Menu-Driven',4),(4,'Enter Amount',3),(5,'Enter Amount with Accounts',3);
+INSERT INTO `part` VALUES (1,'Account'),(2,'Amount'),(3,'SubAccount'),(4,'Disclaimer'),(5,'Global'),(6,'Logical');
+INSERT INTO `stream` VALUES (1,'OF','Foreign'),(2,'O1','On-Us 1'),(3,'O2','On-Us 2'),(4,'O3','On-Us 3');

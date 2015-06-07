@@ -32,7 +32,7 @@ public class JaxRsApp extends ResourceConfig {
 		);
 		
 		// expose application REST endpoints
-		packages(EntryResource.class.getPackage().getName());
+		packages(AccountResource.class.getPackage().getName());
 		packages(EntryTypeResource.class.getPackage().getName());
 		packages(FeatureResource.class.getPackage().getName());
 		packages(FlavorResource.class.getPackage().getName());

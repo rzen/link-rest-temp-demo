@@ -7,6 +7,7 @@ Ext.define('Builder.view.ViewModel', {
 	},
 
 	data: {
+		userName: 'Andrew Stefanov'
 	},
 
 	links: {

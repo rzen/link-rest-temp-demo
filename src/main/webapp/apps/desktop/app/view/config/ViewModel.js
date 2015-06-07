@@ -5,8 +5,8 @@ Ext.define('Builder.view.ViewModel', {
 
 	stores: {
 
-		entries: {
-			model: 'Builder.model.Entry',
+		accounts: {
+			model: 'Builder.model.Account',
 			autoLoad: true,
 			remoteSort: true,
 			remoteFilter: true,
@@ -17,11 +17,8 @@ Ext.define('Builder.view.ViewModel', {
 				direction: 'ASC'
 			}],
 			proxy: {
-				url: '/atm/load/builder/rest/entry',
-				type: 'linkrest',
-				include: [
-					'part', 'entryType'
-				]
+				url: '/atm/load/builder/rest/account',
+				type: 'linkrest'
 			}
 		},
 

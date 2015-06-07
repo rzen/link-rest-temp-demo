@@ -5,11 +5,15 @@ Ext.define('Builder.view.chrome.Bar', {
 
 	ui: 'chrome-top',
 
+	viewModel: {},
+
 	items: [
 		{
 			text: 'ATM Load Builder'
 		}, '->', {
-			text: 'John Doe',
+			bind: {
+				text: '{userName}'
+			},
 			menu: [
 				{
 					text: 'Preferences...'

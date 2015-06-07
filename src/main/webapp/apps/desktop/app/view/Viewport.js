@@ -5,8 +5,13 @@ Ext.define('Builder.view.Viewport', {
 		'Ext.tab.Panel'
 	],
 
-	xtype: 'builder_vieport',
+	xtype: 'builder_viewport',
 	
+	contoller: 'builder_main',
+	viewModel: {
+		xtype: 'builder_main'
+	},
+
 	layout: 'border',
 
 	items: [

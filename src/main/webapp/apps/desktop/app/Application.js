@@ -17,3 +17,14 @@ Ext.define('Builder.Application', {
         // TODO - Launch the application
     }
 });
+
+
+/*
+
+TODO:
+
+- remove feature.active
+- remove emtry
+- add account id,name,code
+
+ */

@@ -1,3 +1,3 @@
-Ext.define('Builder.model.Entry', {
+Ext.define('Builder.model.Account', {
 	extend: 'Builder.model.BaseModel'
 });

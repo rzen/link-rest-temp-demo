@@ -6,5 +6,17 @@ Ext.define('Builder.view.load.Tab', {
 
 	xtype: 'load_tab',
 
-	html: '<div style="padding: 4em; color: #999; font-size: 2em; font-weight: bold;">Load editing will be here.</style>'
+	defaults: {
+		padding: 10
+	},
+
+	items: [
+		{
+			xtype: 'feature_screen'
+		}, {
+			xtype: 'feature_screen'
+		}, {
+			xtype: 'feature_screen'
+		}
+	]
 });

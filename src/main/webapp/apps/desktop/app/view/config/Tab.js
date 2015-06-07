@@ -22,7 +22,7 @@ Ext.define('Builder.view.config.Tab', {
 		},
 		defaults: {
 			padding: 5,
-			flex: 3
+			flex: 1
 		}
 	},
 
@@ -34,28 +34,27 @@ Ext.define('Builder.view.config.Tab', {
 					xtype: "config_feature_grid",
 					bind: "{features}"
 				}, {
-					title: 'Entries',
-					xtype: "config_entry_grid",
-					bind: "{entries}"
+					title: 'Entry Types',
+					xtype: "config_entrytype_grid",
+					bind: "{entryTypes}"
+				}, {
+					title: 'Accounts',
+					xtype: "config_account_grid",
+					bind: "{accounts}"
 				}
 			]
 		}, {
 			items: [
 				{
-					flex: 2,
 					title: 'Parts',
 					xtype: "config_part_grid",
 					bind: "{parts}"
-				}, {
-					title: 'Entry Types',
-					xtype: "config_entrytype_grid",
-					bind: "{entryTypes}"
 				}, {
 					title: 'Streams',
 					xtype: "config_stream_grid",
 					bind: "{streams}"
 				}, {
-					flex: 4,
+					flex: 2,
 					title: 'Flavor',
 					xtype: "config_flavor_grid",
 					bind: "{flavors}"

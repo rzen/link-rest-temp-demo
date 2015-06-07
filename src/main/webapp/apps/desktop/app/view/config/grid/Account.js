@@ -1,7 +1,7 @@
-Ext.define('Builder.view.config.grid.Feature', {
+Ext.define('Builder.view.config.grid.Account', {
 	extend: 'Builder.view.config.grid.Base',
 
-	xtype: 'config_feature_grid',
+	xtype: 'config_account_grid',
 
 	columns: [
 		{
@@ -12,4 +12,4 @@ Ext.define('Builder.view.config.grid.Feature', {
 			xtype: 'config_column_code'
 		}
 	]
-})
+});
