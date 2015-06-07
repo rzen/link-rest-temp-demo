@@ -6,12 +6,5 @@ Ext.define('Builder.view.load.Tab', {
 
 	xtype: 'load_tab',
 
-	bodyStyle: 'background-color:#ccc;',
-	
-	// controller: 'builder_load',
-	// viewModel: {
-	// 	type: 'builder_load'
-	// },
-
-	html: 'Load Tab'
+	html: '<div style="padding: 4em; color: #999; font-size: 2em; font-weight: bold;">Load editing will be here.</style>'
 });

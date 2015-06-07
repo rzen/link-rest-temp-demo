@@ -1,5 +1,7 @@
-Ext.define('Builder.view.LoadGrid', {
+Ext.define('Builder.view.load.grid.Load', {
 	extend: 'Ext.panel.Panel',
+
+	bodyStyle: 'padding: 4em; color: #999; font-size: 2em; font-weight: bold;',
 
 	html: 'Load Grid'
 
