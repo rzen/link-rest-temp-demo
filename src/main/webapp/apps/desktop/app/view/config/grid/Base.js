@@ -45,13 +45,28 @@ Ext.define('Builder.view.config.grid.Base', {
 		}
 	],
 
-	initComponent: function() {
-		this.dockedItems = [{
-			dock: 'bottom',
-			xtype: 'pagingtoolbar',
-			store: this.store
-		}];
+	dockedItems: [{
+		dock: 'bottom',
+		xtype: 'pagingtoolbar',
+		store: 'ext-empty-store'
+	}],
 
+	// TODO: Hack alert
+	initPagingToolbar: function () {
+		var me = this,
+			pause = 5600;
+
+		if (me.store.isStore && me.store.getStoreId() !== 'ext-empty-store') {
+			me.getDockedItems('pagingtoolbar')[0].setStore(me.store);
+		} else {
+			Ext.Function.defer(function () {
+				me.initPagingToolbar();
+			}, pause);
+		}
+	},
+
+	initComponent: function() {
 		this.callParent(arguments);
+		this.initPagingToolbar();
 	}
 });
