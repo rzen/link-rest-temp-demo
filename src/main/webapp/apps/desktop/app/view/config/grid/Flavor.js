@@ -5,24 +5,21 @@ Ext.define('Builder.view.config.grid.Flavor', {
 
 	columns: [
 		{
-			width: 40,
-			header: 'Id',
-			dataIndex: 'id',
-			editor: 'numberfield'
+			xtype: 'config_column_id'
 		}, {
-			header: 'Code',
-			dataIndex: 'name',
-			editor: 'textfield'
+			xtype: 'config_column_name'
 		}, {
-			header: 'Name',
-			dataIndex: 'name',
-			editor: 'textfield'
+			xtype: 'config_column_code'
 		}, {
+			xtype: 'templatecolumn',
 			header: 'Feature',
 			dataIndex: 'feature_id',
+			tpl: '{feature.name}',
 			editor: {
 				xtype: 'combo',
-				bind: '{futures}',
+				bind: {
+					store: '{features}'
+				},
 				valueField: 'id',
 				displayField: 'name'
 			}

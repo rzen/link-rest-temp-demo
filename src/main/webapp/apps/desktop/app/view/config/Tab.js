@@ -15,13 +15,13 @@ Ext.define('Builder.view.config.Tab', {
 
 	defaults: {
 		padding: 5,
+		flex: 1,
 		layout: {
 			type: 'hbox',
 			align: 'stretch'
 		},
-		flex: 1,
 		defaults: {
-			border: true,
+			layout: 'fit',
 			padding: 5,
 			flex: 3
 		}

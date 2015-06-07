@@ -7,7 +7,7 @@ Ext.define('Builder.view.config.grid.Base', {
 
 	deferEmptyText: false,
 
-	forceFit: true,
+	forceFit: false,
 	border: true,
 	autoScroll: true,
 

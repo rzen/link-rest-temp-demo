@@ -5,14 +5,9 @@ Ext.define('Builder.view.config.grid.Part', {
 
 	columns: [
 		{
-			width: 40,
-			header: 'Id',
-			dataIndex: 'id',
-			editor: 'numberfield'
+			xtype: 'config_column_id'
 		}, {
-			header: 'Name',
-			dataIndex: 'name',
-			editor: 'textfield'
+			xtype: 'config_column_name'
 		}
 	]
 });

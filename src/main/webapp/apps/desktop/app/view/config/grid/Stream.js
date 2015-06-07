@@ -5,18 +5,11 @@ Ext.define('Builder.view.Stream', {
 
 	columns: [
 		{
-			width: 40,
-			header: 'Id',
-			dataIndex: 'id',
-			editor: 'numberfield'
+			xtype: 'config_column_id'
 		}, {
-			header: 'Code',
-			dataIndex: 'code',
-			editor: 'textfield'
+			xtype: 'config_column_name'
 		}, {
-			header: 'Name',
-			dataIndex: 'name',
-			editor: 'textfield'
+			xtype: 'config_column_code'
 		}
 	]
 })

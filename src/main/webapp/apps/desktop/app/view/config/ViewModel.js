@@ -18,7 +18,10 @@ Ext.define('Builder.view.ViewModel', {
 			}],
 			proxy: {
 				url: '/atm/load/builder/rest/entry',
-				type: 'linkrest'
+				type: 'linkrest',
+				include: [
+					'part', 'entryType'
+				]
 			}
 		},
 
@@ -69,7 +72,10 @@ Ext.define('Builder.view.ViewModel', {
 			}],
 			proxy: {
 				url: '/atm/load/builder/rest/flavor',
-				type: 'linkrest'
+				type: 'linkrest',
+				include: [
+					'feature'
+				]
 			}
 		},
 

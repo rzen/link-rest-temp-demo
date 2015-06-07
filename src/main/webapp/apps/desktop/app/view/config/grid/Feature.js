@@ -5,22 +5,13 @@ Ext.define('Builder.view.config.grid.Feature', {
 
 	columns: [
 		{
-			width: 40,
-			header: 'Id',
-			dataIndex: 'id',
-			editor: 'numberfield'
+			xtype: 'config_column_id'
 		}, {
-			header: 'Name',
-			dataIndex: 'name',
-			editor: 'textfield'
+			xtype: 'config_column_active'
 		}, {
-			header: 'Feature',
-			dataIndex: 'feature',
-			editor: 'textfield'
+			xtype: 'config_column_name'
 		}, {
-			header: 'Stream',
-			dataIndex: 'stream',
-			editor: 'textfield'
+			xtype: 'config_column_code'
 		}
 	]
 })

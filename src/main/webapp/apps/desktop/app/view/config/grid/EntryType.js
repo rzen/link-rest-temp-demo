@@ -5,18 +5,11 @@ Ext.define('Builder.view.config.grid.EntryType', {
 
 	columns: [
 		{
-			width: 40,
-			header: 'Id',
-			dataIndex: 'id',
-			editor: 'numberfield'
+			xtype: 'config_column_id'
 		}, {
-			header: 'Code',
-			dataIndex: 'name',
-			editor: 'textfield'
+			xtype: 'config_column_name'
 		}, {
-			header: 'Name',
-			dataIndex: 'name',
-			editor: 'textfield'
+			xtype: 'config_column_code'
 		}
 	]
 });
