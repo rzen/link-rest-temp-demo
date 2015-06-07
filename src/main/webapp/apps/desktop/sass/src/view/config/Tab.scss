@@ -1,0 +1,21 @@
+.badge {
+	display: inline-block;
+	border-radius: 10px;
+	height: 16px;
+	width: 16px;
+	padding: 2px 7px;
+	margin: 0 2px;
+	font-weight: bold;
+	font-size: .9em;
+	background-color: white;
+	border: none;
+
+	&.active {
+		background-color: #0c0;
+		@include background-gradient(#0c0, matte, top);
+	}
+	&.inactive {
+		background-color: #c00;
+		@include background-gradient(#c00, matte, top);
+	}
+} 
