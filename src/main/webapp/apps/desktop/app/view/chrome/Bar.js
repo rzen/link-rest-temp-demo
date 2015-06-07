@@ -3,6 +3,8 @@ Ext.define('Builder.view.chrome.Bar', {
 
 	xtype: 'chrome_bar',
 
+	ui: 'chrome-top',
+
 	items: [
 		{
 			text: 'ATM Load Builder'
